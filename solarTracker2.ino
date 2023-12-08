@@ -23,12 +23,12 @@ void setup()
     servoHorizontal.attach(servoHorizontalPin);
     servoVertical.attach(servoVerticalPin);
     // lets test the servos;
-    for (int i = 0; i < 180; ++)
+    for (int i = 0; i < 180; i++)
     {
         servoHorizontal.write(i);
         delay(20);
     }
-    for (int i = 180; i > 0; --)
+    for (int i = 180; i > 0; i--)
     {
         servoHorizontal.write(i);
         delay(20);
