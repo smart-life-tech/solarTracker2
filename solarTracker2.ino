@@ -93,31 +93,26 @@ int determineOptimalPosition(int intensities[])
     return maxIndex;
 }
 
-void updateServoPositions(int optimalPosition)
-{
-    // Adjust horizontal servo
-    if (optimalPosition == 0 || optimalPosition == 1)
-    {
-        servoHorizontal.write(90); // Face east or west
-    }
-    else if (optimalPosition == 2)
-    {
-        servoHorizontal.write(0); // Face north
-    }
-    else
-    {
-        servoHorizontal.write(180); // Face south
-    }
+void updateServoPositions(int optimalPosition) {
+  // Adjust horizontal servo
+  if (optimalPosition == 0 || optimalPosition == 1) {
+    servoHorizontal.write(90);  // Face east or west
+  } else if (optimalPosition == 2) {
+    servoHorizontal.write(0);   // Face north
+  } else {
+    servoHorizontal.write(180); // Face south
+  }
+  
+  delay(500);  // Introduce a small delay
 
-    // Adjust vertical servo
-    if (optimalPosition == 2 || optimalPosition == 3)
-    {
-        servoVertical.write(90); // Face up or down
-    }
-    else
-    {
-        servoVertical.write(0); // Face level
-    }
+  // Adjust vertical servo
+  if (optimalPosition == 2 || optimalPosition == 3) {
+    servoVertical.write(90);    // Face up or down
+  } else {
+    servoVertical.write(0);     // Face level
+  }
+
+  delay(500);  // Introduce a small delay
 }
 
 void displayLCD(int intensities[], int optimalPosition)
